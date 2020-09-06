@@ -4,7 +4,7 @@
 
 ## compile.sh
 
-Bash script used to compile PHP on MacOS and Linux platforms. Make sure you have ``make autoconf automake libtool m4 wget getconf gzip bzip2 bison g++ git cmake pkg-config``.
+Bash script used to compile PHP on MacOS and Linux platforms. Make sure you have ``make autoconf automake libtool m4 wget getconf gzip bzip2 bison g++ git cmake pkg-config re2c``.
 
 ### Additional notes
 #### Mac OSX (native compile)
@@ -24,9 +24,12 @@ Bash script used to compile PHP on MacOS and Linux platforms. Make sure you have
 | -g           | Will compile GD2                                                                      |
 | -j           | Set make threads to #                                                                 |
 | -l           | Will compile with LevelDB support (experimental with PHP7)                            |
+| -n           | Don't remove sources after completing compilation                                     |
+| -r           | Will compile Readline                                                                 |
 | -s           | Will compile everything statically                                                    |
 | -t           | Set target                                                                            |
 | -u           | Will compile PocketMine-ChunkUtils C extension (recommended if using PC Anvil worlds) |
+| -v           | Enable Valgrind support in PHP                                                        |
 | -x           | Specifies we are doing cross-compile                                                  |
 
 ### Example:
@@ -55,6 +58,6 @@ Script to install PocketMine-MP and PHP binaries on Unix platforms.
 ## windows-compile-vs.bat
 
 Batch script utilizing Visual Studio on Windows to compile PHP binaries from sources.
-Ensure you have Visual Studio 2017, Windows 8.1 SDK, `git`, `7z` and `wget` installed in your PATH.
+Ensure you have Visual Studio 2017, `git`, `7z` and `wget` installed in your PATH.
 
 Prebuilt binaries can be downloaded from our [AppVeyor build job](https://ci.appveyor.com/project/pmmp/php-build-scripts/build/artifacts).

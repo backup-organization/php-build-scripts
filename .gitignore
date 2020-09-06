@@ -4,3 +4,5 @@ install.log
 temp_data/
 compile.log
 .idea/
+/*.zip
+/*.exe
