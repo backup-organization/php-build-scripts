@@ -1,5 +1,5 @@
 #!/bin/bash
-[ -z "$PHP_VERSION" ] && PHP_VERSION="7.4.10"
+[ -z "$PHP_VERSION" ] && PHP_VERSION="7.4.11"
 
 ZLIB_VERSION="1.2.11"
 GMP_VERSION="6.2.0"
@@ -24,6 +24,7 @@ EXT_DS_VERSION="2ddef84d3e9391c37599cb716592184315e23921"
 EXT_CRYPTO_VERSION="5f26ac91b0ba96742cc6284cd00f8db69c3788b2"
 EXT_RECURSIONGUARD_VERSION="d6ed5da49178762ed81dc0184cd34ff4d3254720"
 EXT_ZSTD_VERSION="0.9.0"
+EXT_MORTON_VERSION="0.1.1"
 
 function write_out {
 	echo "[$1] $2"
@@ -843,6 +844,7 @@ get_github_extension "leveldb" "$EXT_LEVELDB_VERSION" "pmmp" "php-leveldb"
 
 get_github_extension "chunkutils2" "$EXT_CHUNKUTILS2_VERSION" "pmmp" "ext-chunkutils2"
 
+get_github_extension "morton" "$EXT_MORTON_VERSION" "pmmp" "ext-morton"
 
 echo -n "[PHP]"
 
@@ -935,6 +937,7 @@ $HAVE_READLINE \
 $HAS_PROFILER \
 $HAS_DEBUG \
 --enable-chunkutils2 \
+--enable-morton \
 --enable-mbstring \
 --disable-mbregex \
 --enable-calendar \
